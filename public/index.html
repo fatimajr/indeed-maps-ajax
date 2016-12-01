@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+</head>
+<body>
+	<div class="row">
+		 <div class="col s4 m4 l4"> 
+		 	<div class="indeed">
+		 		<input placeholder="Job Name" class="jobname" id="jobname" type="text" value="" name="jobname">
+				<input placeholder="Location" class="location" id="location" type="text" value="" name="location">
+				<a class="waves-effect waves-light btn" type="submit" id="searchResult" value="Find Jobs" > Find Jobs</a>
+				<!-- <input class=""> -->
+				<!-- Job result element --> 
+				<div id="jobs-data"></div>
+				<div style="clear:both;"></div>
+				<!--Pagination element -->
+				<div id="pagination" class="pagination"></div>
+		 	</div>
+	    	
+	    </div>
+		<div class="col s8 m8 l8">
+			<div id="map"></div>
+		</div>
+	    
+	</div>
+   
+	
+    
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    <script src="js/client.js" type="text/javascript"></script>
+    <script>
+      function initMap() {
+      	var myLatLng = {lat: -12.0579887, lng:-77.0473297};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          scrollwheel: false,
+          zoom: 14,
+          center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+		    position: myLatLng,
+		    map: map,
+		    title: 'Hello World!'
+		  });
+      }
+
+    </script>
+	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAifBc_o38R8Jpvgnb5Uvwt7QF1OhSMyg8&callback=initMap"
+    async defer></script>
+</body>
+</html>
